@@ -1,19 +1,31 @@
+import 'package:esports_match_endpoint/core/enums/event_streak_type_enum.dart';
 import 'package:esports_match_endpoint/domain/entities/event_streak_entity.dart';
 
 
 class EventStreakModel extends EventStreakEntity{
 
   const EventStreakModel({
-    required super.type, required super.name, required super.team
-  });
+    required EventStreakType type,
+    required String? name,
+    required String? team,
+    bool? continued,
+    String? value
+  }) : super(
+    type: type,
+    name: name,
+    team: team,
+    continued: continued,
+    value: value
+  );
 
   factory EventStreakModel.fromJson(Map<String, dynamic> json){
-    EventStreakModel eventStreakModel = EventStreakModel(
-      type: json[],
-      name: name,
-      team: team
-    )
-    return
+    return EventStreakModel(
+        type: json['type'],
+        name: json['name'],
+        team: json['team'],
+        value: json['value'],
+        continued: json['continued']
+    );
   }
 
 }

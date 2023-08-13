@@ -4,7 +4,6 @@ import 'package:esports_match_endpoint/core/enums/event_streak_type_enum.dart';
 import 'package:esports_match_endpoint/data/model/event_streak_model.dart';
 import 'package:esports_match_endpoint/domain/entities/event_streak_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 
 import '../../fixtures/file_names.dart';
 import '../../fixtures/fixture_reader.dart';
@@ -22,34 +21,71 @@ void main(){
   );
 
   group('fromJson', () {
+
+    test('Should get general event list', (){
+      final Map<String, dynamic> json = jsonDecode(readFixture(eventStreakJson));
+
+      final List<dynamic> eventGeneralList = json['general'];
+
+      expect(eventGeneralList.length, greaterThan(0));
+
+    });
+
+    test('Should set for each model event type as general', (){
+      final Map<String, dynamic> json = jsonDecode(readFixture(eventStreakJson));
+      final List<dynamic> eventGeneralList = json['general'];
+      final List<EventStreakModel> generalEventList = [];
+
+      for (var element in eventGeneralList) {
+        Map<String, dynamic> manipulatedJson = {
+          'type': EventStreakType.general
+        };
+
+        manipulatedJson.addAll(element as Map<String, dynamic>);
+        generalEventList.add(EventStreakModel.fromJson(manipulatedJson));
+      }
+
+      final result = generalEventList[0];
+
+      expect(result.type, EventStreakType.general);
+    });
+
     test('Should return a valid event model from JSON', () async {
 
       final Map<String, dynamic> json = jsonDecode(readFixture(eventStreakJson));
+      final List<dynamic> eventGeneralList = json['general'];
+      final Map<String, dynamic> manipulatedJson = {
+        'type': EventStreakType.general
+      };
 
-      final result = EventStreakModel.fromJson(json);
+      manipulatedJson.addAll(eventGeneralList[0] as Map<String, dynamic>);
 
-      expect(result.runtimeType, isA<EventStreakModel>());
+      final result = EventStreakModel.fromJson(manipulatedJson);
 
-    });
-
-    test('Should return a valid event model from JSON with event type as general', () async {
-
-      final Map<String, dynamic> json = jsonDecode(readFixture(eventStreakJson));
-
-      final result = EventStreakModel.fromJson(json);
-
-      expect(result.type, EventStreakType.general);
+      expect(result.runtimeType, EventStreakModel);
 
     });
 
-    test('Should return a valid event model from JSON with event type as head2head', () async {
+    test('Should set for each model event type as head2head', () async {
 
       final Map<String, dynamic> json = jsonDecode(readFixture(eventStreakJson));
+      final List<dynamic> eventH2hList = json['head2head'];
+      final List<EventStreakModel> h2hEventList = [];
 
-      final result = EventStreakModel.fromJson(json);
+      for (var element in eventH2hList) {
+        Map<String, dynamic> manipulatedJson = {
+          'type': EventStreakType.h2h
+        };
+
+        manipulatedJson.addAll(element as Map<String, dynamic>);
+        h2hEventList.add(EventStreakModel.fromJson(manipulatedJson));
+      }
+
+      final result = h2hEventList[0];
 
       expect(result.type, EventStreakType.h2h);
 
     });
   });
+
 }
