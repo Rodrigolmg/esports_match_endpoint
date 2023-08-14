@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:esports_match_endpoint/core/enums/event_streak_type_enum.dart';
+import 'package:esports_match_endpoint/domain/entities/enums/event_streak_type_enum.dart';
 
 class EventStreakEntity extends Equatable {
   final EventStreakType type;

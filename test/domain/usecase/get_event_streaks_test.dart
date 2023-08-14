@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:esports_match_endpoint/domain/entities/event_streak_entity.dart';
 import 'package:esports_match_endpoint/domain/repositories/event_streaks_repository.dart';
 import 'package:esports_match_endpoint/domain/usecases/get_event_streaks.dart';
-import 'package:esports_match_endpoint/core/enums/event_streak_type_enum.dart';
+import 'package:esports_match_endpoint/domain/entities/enums/event_streak_type_enum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
