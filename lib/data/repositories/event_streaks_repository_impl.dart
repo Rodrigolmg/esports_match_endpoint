@@ -2,7 +2,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:esports_match_endpoint/core/error/exception.dart';
 import 'package:esports_match_endpoint/core/error/failure.dart';
-import 'package:esports_match_endpoint/core/platform/network_info.dart';
+import 'package:esports_match_endpoint/core/network/network_info.dart';
 import 'package:esports_match_endpoint/data/datasources/event_streak_datasource.dart';
 import 'package:esports_match_endpoint/data/datasources/local/event_streak_local_datasource.dart';
 import 'package:esports_match_endpoint/data/model/event_streak_model.dart';

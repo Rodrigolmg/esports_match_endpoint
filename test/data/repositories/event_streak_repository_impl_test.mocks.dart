@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
-import 'package:esports_match_endpoint/core/platform/network_info.dart' as _i6;
+import 'package:esports_match_endpoint/core/network/network_info.dart' as _i6;
 import 'package:esports_match_endpoint/data/datasources/event_streak_datasource.dart'
     as _i3;
 import 'package:esports_match_endpoint/data/datasources/local/event_streak_local_datasource.dart'
