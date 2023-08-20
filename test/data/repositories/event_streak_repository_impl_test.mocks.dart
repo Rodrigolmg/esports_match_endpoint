@@ -3,15 +3,15 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i3;
 
 import 'package:esports_match_endpoint/core/network/network_info.dart' as _i6;
 import 'package:esports_match_endpoint/data/datasources/event_streak_datasource.dart'
-    as _i3;
+    as _i2;
 import 'package:esports_match_endpoint/data/datasources/local/event_streak_local_datasource.dart'
     as _i5;
 import 'package:esports_match_endpoint/data/model/event_streak_model.dart'
-    as _i2;
+    as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -25,46 +25,21 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeEventStreakModel_0 extends _i1.SmartFake
-    implements _i2.EventStreakModel {
-  _FakeEventStreakModel_0(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
 /// A class which mocks [EventStreakDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockEventStreakDataSource extends _i1.Mock
-    implements _i3.EventStreakDataSource {
+    implements _i2.EventStreakDataSource {
   @override
-  _i4.Future<_i2.EventStreakModel> getEventStreaks(int? id) =>
+  _i3.Future<_i4.EventStreakModel?> getEventStreaks(int? id) =>
       (super.noSuchMethod(
         Invocation.method(
           #getEventStreaks,
           [id],
         ),
-        returnValue:
-            _i4.Future<_i2.EventStreakModel>.value(_FakeEventStreakModel_0(
-          this,
-          Invocation.method(
-            #getEventStreaks,
-            [id],
-          ),
-        )),
-        returnValueForMissingStub:
-            _i4.Future<_i2.EventStreakModel>.value(_FakeEventStreakModel_0(
-          this,
-          Invocation.method(
-            #getEventStreaks,
-            [id],
-          ),
-        )),
-      ) as _i4.Future<_i2.EventStreakModel>);
+        returnValue: _i3.Future<_i4.EventStreakModel?>.value(),
+        returnValueForMissingStub: _i3.Future<_i4.EventStreakModel?>.value(),
+      ) as _i3.Future<_i4.EventStreakModel?>);
 }
 
 /// A class which mocks [EventStreakLocalDataSource].
@@ -73,38 +48,25 @@ class MockEventStreakDataSource extends _i1.Mock
 class MockEventStreakLocalDataSource extends _i1.Mock
     implements _i5.EventStreakLocalDataSource {
   @override
-  _i4.Future<_i2.EventStreakModel> getLastEventStreak() => (super.noSuchMethod(
+  _i3.Future<_i4.EventStreakModel?> getLastEventStreak(String? boxName) =>
+      (super.noSuchMethod(
         Invocation.method(
           #getLastEventStreak,
-          [],
+          [boxName],
         ),
-        returnValue:
-            _i4.Future<_i2.EventStreakModel>.value(_FakeEventStreakModel_0(
-          this,
-          Invocation.method(
-            #getLastEventStreak,
-            [],
-          ),
-        )),
-        returnValueForMissingStub:
-            _i4.Future<_i2.EventStreakModel>.value(_FakeEventStreakModel_0(
-          this,
-          Invocation.method(
-            #getLastEventStreak,
-            [],
-          ),
-        )),
-      ) as _i4.Future<_i2.EventStreakModel>);
+        returnValue: _i3.Future<_i4.EventStreakModel?>.value(),
+        returnValueForMissingStub: _i3.Future<_i4.EventStreakModel?>.value(),
+      ) as _i3.Future<_i4.EventStreakModel?>);
   @override
-  _i4.Future<void> cacheEventStreak(_i2.EventStreakModel? eventStreakModel) =>
+  _i3.Future<void> cacheEventStreak(_i4.EventStreakModel? eventStreakModel) =>
       (super.noSuchMethod(
         Invocation.method(
           #cacheEventStreak,
           [eventStreakModel],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }
 
 /// A class which mocks [NetworkInfo].
@@ -112,9 +74,9 @@ class MockEventStreakLocalDataSource extends _i1.Mock
 /// See the documentation for Mockito's code generation for more information.
 class MockNetworkInfo extends _i1.Mock implements _i6.NetworkInfo {
   @override
-  _i4.Future<bool> get isConnected => (super.noSuchMethod(
+  _i3.Future<bool> get isConnected => (super.noSuchMethod(
         Invocation.getter(#isConnected),
-        returnValue: _i4.Future<bool>.value(false),
-        returnValueForMissingStub: _i4.Future<bool>.value(false),
-      ) as _i4.Future<bool>);
+        returnValue: _i3.Future<bool>.value(false),
+        returnValueForMissingStub: _i3.Future<bool>.value(false),
+      ) as _i3.Future<bool>);
 }

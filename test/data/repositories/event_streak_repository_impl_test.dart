@@ -105,25 +105,25 @@ void main(){
 
       test('Should return last locally cached data when the cached data is present',
       () async {
-        when(mockEventStreakLocalDataSource.getLastEventStreak())
+        when(mockEventStreakLocalDataSource.getLastEventStreak(any))
             .thenAnswer((_) async => eventModel);
 
         final result = await repositoryImpl.getEventStreaks(eventId);
 
         verifyZeroInteractions(mockEventStreakDataSource);
-        verify(mockEventStreakLocalDataSource.getLastEventStreak());
+        verify(mockEventStreakLocalDataSource.getLastEventStreak(any));
         expect(result, equals(const Right(eventEntity)));
       });
 
       test('Should return CacheFailure when there is no cached data',
           () async {
-        when(mockEventStreakLocalDataSource.getLastEventStreak())
+        when(mockEventStreakLocalDataSource.getLastEventStreak(any))
             .thenThrow(CacheException());
 
         final result = await repositoryImpl.getEventStreaks(eventId);
 
         verifyZeroInteractions(mockEventStreakDataSource);
-        verify(mockEventStreakLocalDataSource.getLastEventStreak());
+        verify(mockEventStreakLocalDataSource.getLastEventStreak(any));
         expect(result, equals(Left(CacheFailure())));
       });
     });
