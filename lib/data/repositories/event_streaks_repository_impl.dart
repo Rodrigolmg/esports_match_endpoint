@@ -25,8 +25,8 @@ class EventStreaksRepositoryImpl implements EventStreaksRepository{
   Future<Either<Failure, EventStreakEntity>> getEventStreaks(int? id) async {
     if(await networkInfo.isConnected){
       try {
-        final EventStreakModel eventStreak = await remoteDataSource.getEventStreaks(id);
-        localDataSource.cacheEventStreak(eventStreak);
+        final EventStreakModel? eventStreak = await remoteDataSource.getEventStreaks(id);
+        localDataSource.cacheEventStreak(eventStreak!);
 
         return Right(eventStreak);
       } on ServerException {
@@ -34,8 +34,8 @@ class EventStreaksRepositoryImpl implements EventStreaksRepository{
       }
     } else {
       try {
-        final EventStreakModel lastEventStreakLocal = await localDataSource.getLastEventStreak();
-        return Right(lastEventStreakLocal);
+        final EventStreakModel? lastEventStreakLocal = await localDataSource.getLastEventStreak('Test');
+        return Right(lastEventStreakLocal!);
       } on CacheException {
         return Left(CacheFailure());
       }
