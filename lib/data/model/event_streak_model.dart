@@ -19,8 +19,12 @@ class EventStreakModel extends EventStreakEntity{
   );
 
   factory EventStreakModel.fromJson(Map<String, dynamic> json){
+
+    EventStreakType type = json['type'] == EventStreakType.general.type ?
+      EventStreakType.general : EventStreakType.h2h;
+
     return EventStreakModel(
-        type: json['type'],
+        type: type,
         name: json['name'],
         team: json['team'],
         value: json['value'],
