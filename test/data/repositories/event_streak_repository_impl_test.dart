@@ -1,11 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:esports_match_endpoint/core/error/exception.dart';
-import 'package:esports_match_endpoint/core/error/failure.dart';
-import 'package:esports_match_endpoint/core/network/network_info.dart';
-import 'package:esports_match_endpoint/data/datasources/event_streak_datasource.dart';
-import 'package:esports_match_endpoint/data/datasources/local/event_streak_local_datasource.dart';
+import 'package:esports_match_endpoint/core/core.dart';
+import 'package:esports_match_endpoint/data/datasources/datasource.dart';
 import 'package:esports_match_endpoint/data/model/event_streak_model.dart';
-import 'package:esports_match_endpoint/data/repositories/event_streaks_repository_impl.dart';
+import 'package:esports_match_endpoint/data/repositories/repository.dart';
 import 'package:esports_match_endpoint/domain/entities/enums/event_streak_type_enum.dart';
 import 'package:esports_match_endpoint/domain/entities/event_streak_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -34,14 +31,14 @@ void main(){
 
   group('Get event streaks', () {
     const eventId = 1;
-    const eventModel = EventStreakModel(
+    EventStreakModel eventModel = EventStreakModel(
       type: EventStreakType.general,
       name: 'General',
       team: 'Team',
       continued: true,
       value: '3'
     );
-    const EventStreakEntity eventEntity = eventModel;
+    EventStreakEntity eventEntity = eventModel;
 
     test('Should check if the device is online', () {
 
@@ -66,7 +63,7 @@ void main(){
         final result = await repositoryImpl.getEventStreaks(eventId);
 
         verify(mockEventStreakDataSource.getEventStreaks(eventId));
-        expect(result, equals(const Right(eventModel)));
+        expect(result, equals(Right(eventModel)));
 
 
       });
@@ -105,25 +102,25 @@ void main(){
 
       test('Should return last locally cached data when the cached data is present',
       () async {
-        when(mockEventStreakLocalDataSource.getLastEventStreak(any))
+        when(mockEventStreakLocalDataSource.getLastEventStreak())
             .thenAnswer((_) async => eventModel);
 
         final result = await repositoryImpl.getEventStreaks(eventId);
 
         verifyZeroInteractions(mockEventStreakDataSource);
-        verify(mockEventStreakLocalDataSource.getLastEventStreak(any));
-        expect(result, equals(const Right(eventEntity)));
+        verify(mockEventStreakLocalDataSource.getLastEventStreak());
+        expect(result, equals(Right(eventEntity)));
       });
 
       test('Should return CacheFailure when there is no cached data',
           () async {
-        when(mockEventStreakLocalDataSource.getLastEventStreak(any))
+        when(mockEventStreakLocalDataSource.getLastEventStreak())
             .thenThrow(CacheException());
 
         final result = await repositoryImpl.getEventStreaks(eventId);
 
         verifyZeroInteractions(mockEventStreakDataSource);
-        verify(mockEventStreakLocalDataSource.getLastEventStreak(any));
+        verify(mockEventStreakLocalDataSource.getLastEventStreak());
         expect(result, equals(Left(CacheFailure())));
       });
     });

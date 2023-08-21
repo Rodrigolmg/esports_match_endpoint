@@ -1,28 +1,39 @@
-import 'package:esports_match_endpoint/data/model/event_streak_model.dart';
-import 'package:hive/hive.dart';
+part of datasource;
 
 abstract class EventStreakLocalDataSource {
-  Future<EventStreakModel?> getLastEventStreak(String boxName);
+  Future<EventStreakModel?> getLastEventStreak();
   Future<void> cacheEventStreak(EventStreakModel eventStreakModel);
 }
 
 class EventStreakLocalDataSourceImpl implements EventStreakLocalDataSource {
 
   @override
-  Future<void> cacheEventStreak(EventStreakModel eventStreakModel) {
-    // TODO: implement cacheEventStreak
-    throw UnimplementedError();
+  Future<void> cacheEventStreak(EventStreakModel eventStreakModel) async {
+
+    Box eventStreakBox = Hive.box(DataSourceBoxName.eventStreakName);
+
+    if(!eventStreakBox.isOpen){
+      eventStreakBox = await Hive.openBox(DataSourceBoxName.eventStreakName);
+    }
+
+    eventStreakBox.put('type', eventStreakModel.type);
+    eventStreakBox.put('name', eventStreakModel.name);
+    eventStreakBox.put('team', eventStreakModel.team);
+
+    if(eventStreakModel.continued != null) eventStreakBox.put('type', eventStreakModel.continued);
+    if(eventStreakModel.value != null) eventStreakBox.put('type', eventStreakModel.value);
   }
 
   @override
-  Future<EventStreakModel?> getLastEventStreak(String boxName) async {
-    await Hive.openBox(boxName);
-    final eventStreakBox = Hive.box<EventStreakModel>(boxName);
+  Future<EventStreakModel?> getLastEventStreak() async {
+    Box eventStreakBox = Hive.box(DataSourceBoxName.eventStreakName);
+
+    if(!eventStreakBox.isOpen){
+      eventStreakBox = await Hive.openBox(DataSourceBoxName.eventStreakName);
+    }
 
     int lastBoxIndex = eventStreakBox.length - 1;
     EventStreakModel? lastEventStreak = eventStreakBox.getAt(lastBoxIndex);
-    await eventStreakBox.close();
-    await Hive.close();
     return Future.value(lastEventStreak);
   }
 

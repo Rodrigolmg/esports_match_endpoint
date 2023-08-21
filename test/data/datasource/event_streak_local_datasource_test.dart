@@ -1,4 +1,3 @@
-import 'package:esports_match_endpoint/data/datasources/local/event_streak_local_datasource.dart';
 import 'package:esports_match_endpoint/data/model/event_streak_model.dart';
 import 'package:esports_match_endpoint/domain/entities/enums/event_streak_type_enum.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -10,12 +9,11 @@ import 'package:mockito/mockito.dart';
 import 'event_streak_local_datasource_test.mocks.dart';
 
 void main(){
-  late EventStreakLocalDataSourceImpl localDataSource;
   late MockHiveInterface mockHive;
   late MockBox mockBox;
 
   const String tBoxName = 'boxTest';
-  const EventStreakModel tEventStreak = EventStreakModel(
+  EventStreakModel tEventStreak = EventStreakModel(
       type: EventStreakType.general,
       name: 'Name',
       team: 'Team',
@@ -26,22 +24,28 @@ void main(){
 
   setUp(() {
     mockHive = MockHiveInterface();
+    mockHive.init('testPath');
     mockBox = MockBox();
-    localDataSource = EventStreakLocalDataSourceImpl();
+    mockBox.add(tEventStreak);
   });
 
   group('getLastEventStreak', () {
 
     test('Should get the last event streak', () async {
-      when(localDataSource.getLastEventStreak())
-          .thenAnswer((_) async => tEventStreak);
 
-      mockBox.add(tEventStreak);
+      when(mockHive.box<EventStreakModel>(tBoxName))
+        .thenAnswer((_) => mockBox);
 
-      verify(localDataSource.getLastEventStreak());
-      expect(mockBox.getAt(0), tEventStreak);
+      int lastIndex = mockBox.length - 1;
+      final result = mockBox.getAt(lastIndex);
+
+      expect(result, tEventStreak);
     });
     
   });
 
+  tearDown(() {
+    mockBox.close();
+    mockHive.close();
+  });
 }

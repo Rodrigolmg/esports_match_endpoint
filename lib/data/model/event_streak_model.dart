@@ -2,9 +2,9 @@ import 'package:esports_match_endpoint/domain/entities/enums/event_streak_type_e
 import 'package:esports_match_endpoint/domain/entities/event_streak_entity.dart';
 
 
-class EventStreakModel extends EventStreakEntity{
+class EventStreakModel extends EventStreakEntity {
 
-  const EventStreakModel({
+  EventStreakModel({
     required EventStreakType type,
     required String? name,
     required String? team,

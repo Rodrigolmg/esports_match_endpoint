@@ -5,11 +5,8 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:esports_match_endpoint/core/network/network_info.dart' as _i6;
-import 'package:esports_match_endpoint/data/datasources/event_streak_datasource.dart'
-    as _i2;
-import 'package:esports_match_endpoint/data/datasources/local/event_streak_local_datasource.dart'
-    as _i5;
+import 'package:esports_match_endpoint/core/core.dart' as _i5;
+import 'package:esports_match_endpoint/data/datasources/datasource.dart' as _i2;
 import 'package:esports_match_endpoint/data/model/event_streak_model.dart'
     as _i4;
 import 'package:mockito/mockito.dart' as _i1;
@@ -46,13 +43,12 @@ class MockEventStreakDataSource extends _i1.Mock
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockEventStreakLocalDataSource extends _i1.Mock
-    implements _i5.EventStreakLocalDataSource {
+    implements _i2.EventStreakLocalDataSource {
   @override
-  _i3.Future<_i4.EventStreakModel?> getLastEventStreak(String? boxName) =>
-      (super.noSuchMethod(
+  _i3.Future<_i4.EventStreakModel?> getLastEventStreak() => (super.noSuchMethod(
         Invocation.method(
           #getLastEventStreak,
-          [boxName],
+          [],
         ),
         returnValue: _i3.Future<_i4.EventStreakModel?>.value(),
         returnValueForMissingStub: _i3.Future<_i4.EventStreakModel?>.value(),
@@ -72,7 +68,7 @@ class MockEventStreakLocalDataSource extends _i1.Mock
 /// A class which mocks [NetworkInfo].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockNetworkInfo extends _i1.Mock implements _i6.NetworkInfo {
+class MockNetworkInfo extends _i1.Mock implements _i5.NetworkInfo {
   @override
   _i3.Future<bool> get isConnected => (super.noSuchMethod(
         Invocation.getter(#isConnected),

@@ -1,15 +1,6 @@
+part of repository;
 
-import 'package:dartz/dartz.dart';
-import 'package:esports_match_endpoint/core/error/exception.dart';
-import 'package:esports_match_endpoint/core/error/failure.dart';
-import 'package:esports_match_endpoint/core/network/network_info.dart';
-import 'package:esports_match_endpoint/data/datasources/event_streak_datasource.dart';
-import 'package:esports_match_endpoint/data/datasources/local/event_streak_local_datasource.dart';
-import 'package:esports_match_endpoint/data/model/event_streak_model.dart';
-import 'package:esports_match_endpoint/domain/entities/event_streak_entity.dart';
-import 'package:esports_match_endpoint/domain/repositories/event_streaks_repository.dart';
-
-class EventStreaksRepositoryImpl implements EventStreaksRepository{
+class EventStreaksRepositoryImpl implements EventStreaksRepository {
 
   final EventStreakDataSource remoteDataSource;
   final EventStreakLocalDataSource localDataSource;
@@ -34,7 +25,7 @@ class EventStreaksRepositoryImpl implements EventStreaksRepository{
       }
     } else {
       try {
-        final EventStreakModel? lastEventStreakLocal = await localDataSource.getLastEventStreak('Test');
+        final EventStreakModel? lastEventStreakLocal = await localDataSource.getLastEventStreak();
         return Right(lastEventStreakLocal!);
       } on CacheException {
         return Left(CacheFailure());

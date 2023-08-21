@@ -10,7 +10,7 @@ import '../../fixtures/fixture_reader.dart';
 
 void main(){
 
-  const eventStreakModel = EventStreakModel(
+  EventStreakModel eventStreakModel = EventStreakModel(
     type: EventStreakType.general,
     name: 'Name',
     team: 'Team'

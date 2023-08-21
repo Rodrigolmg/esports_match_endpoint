@@ -6,10 +6,10 @@
 import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
-import 'package:esports_match_endpoint/core/error/failure.dart' as _i5;
+import 'package:esports_match_endpoint/core/core.dart' as _i5;
 import 'package:esports_match_endpoint/domain/entities/event_streak_entity.dart'
     as _i6;
-import 'package:esports_match_endpoint/domain/repositories/event_streaks_repository.dart'
+import 'package:esports_match_endpoint/domain/repositories/repository_contract.dart'
     as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 

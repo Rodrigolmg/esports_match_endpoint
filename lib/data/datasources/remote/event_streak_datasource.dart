@@ -1,9 +1,4 @@
-import 'dart:convert';
-
-import 'package:dio/dio.dart';
-import 'package:esports_http_api/esports_http_api.dart';
-import 'package:esports_match_endpoint/core/error/exception.dart';
-import 'package:esports_match_endpoint/data/model/event_streak_model.dart';
+part of datasource;
 
 abstract class EventStreakDataSource {
   Future<EventStreakModel?> getEventStreaks(int? id);

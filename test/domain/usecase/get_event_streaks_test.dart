@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:esports_match_endpoint/domain/entities/event_streak_entity.dart';
-import 'package:esports_match_endpoint/domain/repositories/event_streaks_repository.dart';
-import 'package:esports_match_endpoint/domain/usecases/get_event_streaks.dart';
 import 'package:esports_match_endpoint/domain/entities/enums/event_streak_type_enum.dart';
+import 'package:esports_match_endpoint/domain/repositories/repository_contract.dart';
+import 'package:esports_match_endpoint/domain/usecases/usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -22,13 +22,13 @@ void main(){
 
   const int eventId = 1;
 
-  const EventStreakEntity event = EventStreakEntity(
+  EventStreakEntity event = EventStreakEntity(
     type: EventStreakType.general,
     name: 'General',
     team: 'Team 1',
   );
 
-  const EventStreakEntity event2h2 = EventStreakEntity(
+  EventStreakEntity event2h2 = EventStreakEntity(
     type: EventStreakType.h2h,
     name: 'Head to Head',
     team: 'Team 2',
@@ -38,18 +38,18 @@ void main(){
     test('Should get Right value', () async {
 
       when(repository.getEventStreaks(any))
-          .thenAnswer((_) async => const Right(event));
+          .thenAnswer((_) async => Right(event));
 
       final result = await useCase(eventId);
 
-      expect(result, const Right(event));
+      expect(result, Right(event));
       verify(repository.getEventStreaks(eventId));
       verifyNoMoreInteractions(repository);
     });
 
     test('Should be general type', () async {
       when(repository.getEventStreaks(any))
-          .thenAnswer((_) async => const Right(event));
+          .thenAnswer((_) async => Right(event));
 
       final result = await useCase(eventId);
 
@@ -64,18 +64,18 @@ void main(){
     test('Should get Right value', () async {
 
       when(repository.getEventStreaks(any))
-          .thenAnswer((_) async => const Right(event2h2));
+          .thenAnswer((_) async => Right(event2h2));
 
       final result = await useCase(eventId);
 
-      expect(result, const Right(event2h2));
+      expect(result, Right(event2h2));
       verify(repository.getEventStreaks(eventId));
       verifyNoMoreInteractions(repository);
     });
 
     test('Should be head2head type', () async {
       when(repository.getEventStreaks(any))
-          .thenAnswer((_) async => const Right(event2h2));
+          .thenAnswer((_) async => Right(event2h2));
 
       final result = await useCase(eventId);
 
