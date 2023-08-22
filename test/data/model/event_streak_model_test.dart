@@ -22,35 +22,7 @@ void main(){
 
   group('fromJson', () {
 
-    test('Should get general event list', (){
-      final Map<String, dynamic> json = jsonDecode(readFixture(eventStreakJson));
-
-      final List<dynamic> eventGeneralList = json['general'];
-
-      expect(eventGeneralList.length, greaterThan(0));
-
-    });
-
-    test('Should set for each model event type as general', (){
-      final Map<String, dynamic> json = jsonDecode(readFixture(eventStreakJson));
-      final List<dynamic> eventGeneralList = json['general'];
-      final List<EventStreakModel> generalEventList = [];
-
-      for (var element in eventGeneralList) {
-        Map<String, dynamic> manipulatedJson = {
-          'type': EventStreakType.general
-        };
-
-        manipulatedJson.addAll(element as Map<String, dynamic>);
-        generalEventList.add(EventStreakModel.fromJson(manipulatedJson));
-      }
-
-      final result = generalEventList[0];
-
-      expect(result.type, EventStreakType.general);
-    });
-
-    test('Should return a valid event model from JSON', () async {
+    test('Should return a valid event streak model from JSON', () async {
 
       final Map<String, dynamic> json = jsonDecode(readFixture(eventStreakJson));
       final List<dynamic> eventGeneralList = json['general'];
@@ -66,25 +38,56 @@ void main(){
 
     });
 
-    test('Should set for each model event type as head2head', () async {
+    group('general', () {
+      test('Should get general event list', (){
+        final Map<String, dynamic> json = jsonDecode(readFixture(eventStreakJson));
 
-      final Map<String, dynamic> json = jsonDecode(readFixture(eventStreakJson));
-      final List<dynamic> eventH2hList = json['head2head'];
-      final List<EventStreakModel> h2hEventList = [];
+        final List<dynamic> eventGeneralList = json['general'];
 
-      for (var element in eventH2hList) {
-        Map<String, dynamic> manipulatedJson = {
-          'type': EventStreakType.h2h
-        };
+        expect(eventGeneralList.length, greaterThan(0));
 
-        manipulatedJson.addAll(element as Map<String, dynamic>);
-        h2hEventList.add(EventStreakModel.fromJson(manipulatedJson));
-      }
+        test('Should set for each model event type as general', (){
+          final Map<String, dynamic> json = jsonDecode(readFixture(eventStreakJson));
+          final List<dynamic> eventGeneralList = json['general'];
+          final List<EventStreakModel> generalEventList = [];
 
-      final result = h2hEventList[0];
+          for (var element in eventGeneralList) {
+            Map<String, dynamic> manipulatedJson = {
+              'type': EventStreakType.general
+            };
 
-      expect(result.type, EventStreakType.h2h);
+            manipulatedJson.addAll(element as Map<String, dynamic>);
+            generalEventList.add(EventStreakModel.fromJson(manipulatedJson));
+          }
 
+          final result = generalEventList[0];
+
+          expect(result.type, EventStreakType.general);
+        });
+      });
+    });
+
+    group('head2head', () {
+      test('Should set for each model event type as head2head', () async {
+
+        final Map<String, dynamic> json = jsonDecode(readFixture(eventStreakJson));
+        final List<dynamic> eventH2hList = json['head2head'];
+        final List<EventStreakModel> h2hEventList = [];
+
+        for (var element in eventH2hList) {
+          Map<String, dynamic> manipulatedJson = {
+            'type': EventStreakType.h2h
+          };
+
+          manipulatedJson.addAll(element as Map<String, dynamic>);
+          h2hEventList.add(EventStreakModel.fromJson(manipulatedJson));
+        }
+
+        final result = h2hEventList[0];
+
+        expect(result.type, EventStreakType.h2h);
+
+      });
     });
   });
 
