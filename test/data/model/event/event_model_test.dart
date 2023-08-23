@@ -1,6 +1,11 @@
+import 'dart:convert';
+
 import 'package:esports_match_endpoint/data/model/event/event_model.dart';
 import 'package:esports_match_endpoint/domain/entities/event/event_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import '../../../fixtures/file_names.dart';
+import '../../../fixtures/fixture_reader.dart';
 
 void main(){
 
@@ -17,8 +22,11 @@ void main(){
 
   group('fromJson', () {
 
-    test('Should return a valid event model from JSON', () async {
+    test('Should return a valid event model from JSON', () {
+      final Map<String, dynamic> json = jsonDecode(readFixture(eventJson));
 
+      final result = EventModel.fromJson(json);
+      expect(result, isA<EventModel>());
     });
 
   });
