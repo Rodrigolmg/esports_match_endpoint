@@ -1,6 +1,4 @@
-import 'package:esports_match_endpoint/domain/entities/enums/event_streak_type_enum.dart';
-import 'package:esports_match_endpoint/domain/entities/event_streak_entity.dart';
-
+part of model;
 
 class EventStreakModel extends EventStreakEntity {
 

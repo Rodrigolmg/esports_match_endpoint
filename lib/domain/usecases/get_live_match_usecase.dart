@@ -1,7 +1,4 @@
-import 'package:dartz/dartz.dart';
-import 'package:esports_match_endpoint/core/core.dart';
-import 'package:esports_match_endpoint/domain/entities/event/event_entity.dart';
-import 'package:esports_match_endpoint/domain/repositories/repository_contract.dart';
+part of usecase;
 
 class GetLiveMatchUseCase implements UseCase<List<dynamic>?, dynamic> {
 
@@ -10,12 +7,7 @@ class GetLiveMatchUseCase implements UseCase<List<dynamic>?, dynamic> {
   GetLiveMatchUseCase(this.repository);
 
   @override
-  Future<Either<Failure, List<dynamic>?>> call([params]) async {
+  Future<Either<Failure, List<EventEntity>?>> call([params]) async {
     return await repository.getLiveMatches();
   }
-
-
-
-
-
 }

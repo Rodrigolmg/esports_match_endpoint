@@ -1,4 +1,4 @@
-import 'package:esports_match_endpoint/domain/entities/event/sport_entity.dart';
+part of model;
 
 class SportModel extends SportEntity {
 

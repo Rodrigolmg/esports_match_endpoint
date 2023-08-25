@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+part of entity;
 
 @HiveType(typeId: 1)
 enum EventStreakType {

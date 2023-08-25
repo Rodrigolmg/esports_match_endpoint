@@ -1,7 +1,4 @@
-import 'package:esports_match_endpoint/data/model/event/change_model.dart';
-import 'package:esports_match_endpoint/data/model/event/team_model.dart';
-import 'package:esports_match_endpoint/data/model/event/tournament_model.dart';
-import 'package:esports_match_endpoint/domain/entities/event/event_entity.dart';
+part of model;
 
 class EventModel extends EventEntity {
 
@@ -106,4 +103,35 @@ class EventModel extends EventEntity {
     return event;
   }
 
+}
+
+extension EventModelX on EventModel {
+  bool get isAwayScoreNull => awayScore == null;
+  bool get isAwayTeamNull => awayTeam == null;
+  bool get isBestOfNull => bestOf == null;
+  bool get isChangesNull => changes == null;
+  bool get isCoverageNull => coverage == null;
+  bool get isCreatedByNicknameNull => createdByNickname == null;
+  bool get isCrowdSourcingDataDisplayEnableNull
+      => crowdSourcingDataDisplayEnabled == null;
+  bool get isCustomIdNull => customId == null;
+  bool get isDefaultPeriodCountNull => defaultPeriodCount == null;
+  bool get isDefaultPeriodLengthNull => defaultPeriodLength == null;
+  bool get isEventTypeNull => eventType == null;
+  bool get isEventEditorNameNull => eventEditorName == null;
+  bool get isFanRatingEventNull => fanRatingEvent == null;
+  bool get isFinalResultOnlyNull => finalResultOnly == null;
+  bool get isHasGlobalHighLightsNull => hasGlobalHighlights == null;
+  bool get isHomeScoreNull => homeScore == null;
+  bool get isHomeTeamNull => homeTeam == null;
+  bool get isPeriodsNull => periods == null;
+  bool get isRoundInfoNull => roundInfo == null;
+  bool get isSeasonNull => season == null;
+  bool get isShowToPromoNull => showToPromo == null;
+  bool get isSlugNull => slug == null;
+  bool get isStartTimestampNull => startTimestamp == null;
+  bool get isStatusNull => status == null;
+  bool get isTimeNull => time == null;
+  bool get isTournamentNull => tournament == null;
+  bool get isWinnerCodeNull => winnerCode == null;
 }

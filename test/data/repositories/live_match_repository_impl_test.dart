@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:esports_match_endpoint/core/core.dart';
 import 'package:esports_match_endpoint/data/datasources/datasource.dart';
-import 'package:esports_match_endpoint/data/model/event/event_model.dart';
+import 'package:esports_match_endpoint/data/model/model.dart';
 import 'package:esports_match_endpoint/data/repositories/repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

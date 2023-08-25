@@ -7,8 +7,7 @@ import 'dart:async' as _i3;
 
 import 'package:esports_match_endpoint/core/core.dart' as _i5;
 import 'package:esports_match_endpoint/data/datasources/datasource.dart' as _i2;
-import 'package:esports_match_endpoint/data/model/event_streak_model.dart'
-    as _i4;
+import 'package:esports_match_endpoint/data/model/model.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint

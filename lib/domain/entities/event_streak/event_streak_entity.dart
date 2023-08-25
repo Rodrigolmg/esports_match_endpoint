@@ -1,7 +1,4 @@
-import 'package:esports_match_endpoint/domain/entities/enums/event_streak_type_enum.dart';
-import 'package:hive/hive.dart';
-
-part 'event_streak_entity.g.dart';
+part of entity;
 
 @HiveType(typeId: 0)
 class EventStreakEntity extends HiveObject {

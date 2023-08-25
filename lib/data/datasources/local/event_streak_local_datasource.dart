@@ -16,12 +16,7 @@ class EventStreakLocalDataSourceImpl implements EventStreakLocalDataSource {
       eventStreakBox = await Hive.openBox(DataSourceBoxName.eventStreakName);
     }
 
-    eventStreakBox.put('type', eventStreakModel.type);
-    eventStreakBox.put('name', eventStreakModel.name);
-    eventStreakBox.put('team', eventStreakModel.team);
-
-    if(eventStreakModel.continued != null) eventStreakBox.put('type', eventStreakModel.continued);
-    if(eventStreakModel.value != null) eventStreakBox.put('type', eventStreakModel.value);
+    eventStreakBox.add(eventStreakModel);
   }
 
   @override

@@ -1,10 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:esports_match_endpoint/core/core.dart';
 import 'package:esports_match_endpoint/data/datasources/datasource.dart';
-import 'package:esports_match_endpoint/data/model/event_streak_model.dart';
+import 'package:esports_match_endpoint/data/model/model.dart';
 import 'package:esports_match_endpoint/data/repositories/repository.dart';
-import 'package:esports_match_endpoint/domain/entities/enums/event_streak_type_enum.dart';
-import 'package:esports_match_endpoint/domain/entities/event_streak_entity.dart';
+import 'package:esports_match_endpoint/domain/entities/entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

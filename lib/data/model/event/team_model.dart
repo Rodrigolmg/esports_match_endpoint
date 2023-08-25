@@ -1,6 +1,5 @@
-import 'package:esports_match_endpoint/data/model/event/country_model.dart';
-import 'package:esports_match_endpoint/data/model/event/sport_model.dart';
-import 'package:esports_match_endpoint/domain/entities/event/team_entity.dart';
+part of model;
+
 
 class TeamModel extends TeamEntity {
 

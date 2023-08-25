@@ -1,16 +1,30 @@
-import 'package:esports_match_endpoint/domain/entities/event/category_entity.dart';
-import 'package:esports_match_endpoint/domain/entities/event/sport_entity.dart';
+part of entity;
 
-class TournamentEntity {
-  final CategoryEntity? category;
-  final int? competitionType;
+@HiveType(typeId: 5)
+class TournamentEntity extends HiveObject{
+
+  @HiveField(0)
   final int id;
+
+  @HiveField(1)
+  final int? competitionType;
+
+  @HiveField(2)
+  final CategoryEntity? category;
+
+  @HiveField(3)
   final String? name;
+
+  @HiveField(4)
   final int? priority;
+
+  @HiveField(5)
   final String? slug;
+
+  @HiveField(6)
   final SportEntity? sport;
 
-  const TournamentEntity({
+  TournamentEntity({
     this.category,
     this.competitionType,
     required this.id,

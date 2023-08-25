@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:esports_match_endpoint/data/model/event/event_model.dart';
-import 'package:esports_match_endpoint/domain/entities/event/event_entity.dart';
+import 'package:esports_match_endpoint/data/model/model.dart';
+import 'package:esports_match_endpoint/domain/entities/entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../fixtures/file_names.dart';

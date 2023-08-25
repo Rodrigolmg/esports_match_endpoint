@@ -1,6 +1,4 @@
-import 'package:esports_match_endpoint/data/model/event/category_model.dart';
-import 'package:esports_match_endpoint/data/model/event/sport_model.dart';
-import 'package:esports_match_endpoint/domain/entities/event/tournament_entity.dart';
+part of model;
 
 class TournamentModel extends TournamentEntity {
 

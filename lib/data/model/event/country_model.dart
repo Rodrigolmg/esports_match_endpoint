@@ -1,4 +1,4 @@
-import 'package:esports_match_endpoint/domain/entities/event/country_entity.dart';
+part of model;
 
 class CountryModel extends CountryEntity {
 

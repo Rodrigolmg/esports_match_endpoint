@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:esports_match_endpoint/domain/entities/event_streak_entity.dart';
-import 'package:esports_match_endpoint/domain/entities/enums/event_streak_type_enum.dart';
+import 'package:esports_match_endpoint/domain/entities/entity.dart';
 import 'package:esports_match_endpoint/domain/repositories/repository_contract.dart';
 import 'package:esports_match_endpoint/domain/usecases/usecase.dart';
 import 'package:flutter_test/flutter_test.dart';

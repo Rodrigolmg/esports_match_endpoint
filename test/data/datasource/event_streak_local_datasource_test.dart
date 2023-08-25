@@ -1,5 +1,5 @@
-import 'package:esports_match_endpoint/data/model/event_streak_model.dart';
-import 'package:esports_match_endpoint/domain/entities/enums/event_streak_type_enum.dart';
+import 'package:esports_match_endpoint/data/model/model.dart';
+import 'package:esports_match_endpoint/domain/entities/entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:mockito/annotations.dart';
