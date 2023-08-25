@@ -13,7 +13,7 @@ class EventStreakDataSourceImpl implements  EventStreakDataSource{
 
   @override
   Future<EventStreakModel?> getEventStreaks(int? id) async {
-    Response response = await dioMethodClient!.getMethod('event/$id/streaks');
+    Response response = await dioMethodClient!.getMethod(UrlPath.eventStreakPath(id));
     Future<EventStreakModel?> futureEvent;
 
     if(response.statusCode != null && response.statusCode == 200){
