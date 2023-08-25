@@ -7,3 +7,4 @@ import 'package:esports_match_endpoint/domain/repositories/repository_contract.d
 
 part 'get_event_streaks.dart';
 part 'get_live_match_usecase.dart';
+part 'get_event_usecase.dart';
