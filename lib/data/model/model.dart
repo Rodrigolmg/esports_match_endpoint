@@ -13,3 +13,6 @@ part 'event/tournament_model.dart';
 
 // event streak
 part 'event_streak/event_streak_model.dart';
+
+// line up
+part 'lineup/';
