@@ -20,8 +20,8 @@ class EventStreaksRepositoryImpl implements EventStreaksRepository {
         localDataSource.cacheEventStreak(eventStreak!);
 
         return Right(eventStreak);
-      } on ServerException {
-        return Left(ServerFailure());
+      } on ServerException catch(sE) {
+        return Left(ServerFailure(statusCode: sE.statusCode));
       }
     } else {
       try {

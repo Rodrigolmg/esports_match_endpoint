@@ -1,6 +1,6 @@
 part of usecase;
 
-class GetEventUseCase implements UseCase<EventEntity, int?> {
+class GetEventUseCase implements UseCase<EventEntity?, int?> {
 
   final EventRepository repository;
 
@@ -9,7 +9,7 @@ class GetEventUseCase implements UseCase<EventEntity, int?> {
   });
 
   @override
-  Future<Either<Failure, EventEntity>> call([int? eventId]) {
+  Future<Either<Failure, EventEntity?>> call([int? eventId]) {
     return repository.getEvent(eventId);
   }
 

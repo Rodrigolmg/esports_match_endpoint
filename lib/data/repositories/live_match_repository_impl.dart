@@ -24,8 +24,8 @@ class LiveMatchRepositoryImpl implements LiveMatchRepository {
 
         return Right(events);
 
-      } on ServerException {
-        return Left(ServerFailure());
+      } on ServerException catch(sE) {
+        return Left(ServerFailure(statusCode: sE.statusCode));
       }
     } else {
       try {

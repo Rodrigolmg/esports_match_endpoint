@@ -9,6 +9,13 @@ abstract class Failure extends Equatable {
 }
 
 class ServerFailure extends Failure {
+
+  final int? statusCode;
+
+  const ServerFailure({
+    this.statusCode,
+  });
+
   @override
   List<Object?> get props => [];
 }
