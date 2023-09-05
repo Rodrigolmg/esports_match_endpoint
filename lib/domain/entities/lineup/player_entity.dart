@@ -36,6 +36,9 @@ class PlayerEntity extends HiveObject{
   @HiveField(9)
   final int? userCount;
 
+  @HiveField(10)
+  final bool? substitute;
+
   PlayerEntity({
     required this.id,
     this.country,
@@ -47,6 +50,7 @@ class PlayerEntity extends HiveObject{
     this.shortName,
     this.slug,
     this.userCount,
+    this.substitute
   });
 
 }

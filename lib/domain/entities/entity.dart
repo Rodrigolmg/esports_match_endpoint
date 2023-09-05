@@ -27,7 +27,7 @@ part 'event/tournament_entity.dart';
 part 'lineup/line_up_entity.dart';
 // part 'lineup/line_up_entity.g.dart';
 part 'enums/line_up_type_enum.dart';
-part 'lineup/event_colors_entity.dart';
+part 'lineup/event_color_entity.dart';
 // part 'lineup/event_colors_entity.g.dart';
 part 'lineup/player_entity.dart';
 // part 'lineup/player_entity.g.dart';

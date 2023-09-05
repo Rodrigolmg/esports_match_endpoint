@@ -3,7 +3,7 @@ part of entity;
 // import 'package:hive/hive.dart';
 
 @HiveType(typeId: 11)
-class EventColorsEntity extends HiveObject{
+class EventColorEntity extends HiveObject{
 
   @HiveField(0)
   final String? fancyNumber;
@@ -17,7 +17,7 @@ class EventColorsEntity extends HiveObject{
   @HiveField(3)
   final String? primary;
 
-  EventColorsEntity({
+  EventColorEntity({
     this.fancyNumber,
     this.number,
     this.outline,

@@ -15,4 +15,6 @@ part 'event/tournament_model.dart';
 part 'event_streak/event_streak_model.dart';
 
 // line up
-part 'lineup/';
+part 'lineup/line_up_model.dart';
+part 'lineup/event_color_model.dart';
+part 'lineup/player_model.dart';
