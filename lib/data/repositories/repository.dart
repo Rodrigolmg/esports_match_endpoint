@@ -11,3 +11,4 @@ import 'package:esports_match_endpoint/domain/repositories/repository_contract.d
 part 'event_streaks_repository_impl.dart';
 part 'live_match_repository_impl.dart';
 part 'event_repository_impl.dart';
+part 'event_line_up_repository_impl.dart';

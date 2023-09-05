@@ -1,6 +1,6 @@
 part of usecase;
 
-class GetLineUpsUseCase implements UseCase<LineUpEntity, int?> {
+class GetLineUpsUseCase implements UseCase<Map<String, LineUpEntity>, int?> {
 
   final EventLineUpRepository repository;
 
@@ -9,9 +9,8 @@ class GetLineUpsUseCase implements UseCase<LineUpEntity, int?> {
   });
 
   @override
-  Future<Either<Failure, LineUpEntity>> call([int? eventId]) {
-    // TODO: implement call
-    throw UnimplementedError();
+  Future<Either<Failure, Map<String, LineUpEntity>>> call([int? eventId]) {
+    return repository.getLineUp(eventId);
   }
 
 
