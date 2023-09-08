@@ -1,0 +1,107 @@
+{
+  "home": "home",
+  "goalkeeperColor": {
+    "fancyNumber": "222226",
+    "number": "222226",
+    "outline": "808080",
+    "primary": "000000"
+  },
+  "playerColor": {
+    "fancyNumber": "222226",
+    "number": "222226",
+    "outline": "808080",
+    "primary": "000000"
+  },
+  "players": [
+    {
+      "player": {
+        "country": {
+          "alpha2": "ZA",
+          "name": "South Africa"
+        },
+        "dateOfBirthTimestamp": 894672000,
+        "firstName": "Rhys",
+        "id": 1079269,
+        "lastName": "Armstrong",
+        "marketValueCurrency": "EUR",
+        "name": "Fadey",
+        "shortName": "Fadey",
+        "slug": "fadey",
+        "userCount": 0
+      },
+      "substitute": false
+    },
+    {
+      "player": {
+        "country": {
+          "alpha2": "ZA",
+          "name": "South Africa"
+        },
+        "dateOfBirthTimestamp": 1005264000,
+        "firstName": "Gareth",
+        "id": 1079125,
+        "lastName": "Ries",
+        "marketValueCurrency": "EUR",
+        "name": "MisteM",
+        "shortName": "MisteM",
+        "slug": "mistem",
+        "userCount": 0
+      },
+      "substitute": false
+    },
+    {
+      "player": {
+        "country": {
+          "alpha2": "US",
+          "name": "USA"
+        },
+        "dateOfBirthTimestamp": 905990400,
+        "firstName": "Michael",
+        "id": 1078107,
+        "lastName": "Schmid",
+        "marketValueCurrency": "EUR",
+        "name": "Swisher",
+        "shortName": "Swisher",
+        "slug": "swisher",
+        "userCount": 0
+      },
+      "substitute": false
+    },
+    {
+      "player": {
+        "country": {
+          "alpha2": "SE",
+          "name": "Sweden"
+        },
+        "dateOfBirthTimestamp": 891648000,
+        "firstName": "Jonathan",
+        "id": 1075735,
+        "lastName": "Bodenmalm",
+        "marketValueCurrency": "EUR",
+        "name": "b0denmaster",
+        "shortName": "b0denmaster",
+        "slug": "b0denmaster",
+        "userCount": 0
+      },
+      "substitute": false
+    },
+    {
+      "player": {
+        "country": {
+          "alpha2": "CA",
+          "name": "Canada"
+        },
+        "dateOfBirthTimestamp": 775526400,
+        "firstName": "Jonathan",
+        "id": 1077462,
+        "lastName": "Dallal",
+        "marketValueCurrency": "EUR",
+        "name": "djay",
+        "shortName": "djay",
+        "slug": "djay",
+        "userCount": 0
+      },
+      "substitute": false
+    }
+  ]
+}
