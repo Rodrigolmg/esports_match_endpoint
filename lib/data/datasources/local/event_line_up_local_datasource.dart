@@ -1,29 +1,35 @@
 part of datasource;
 
 abstract class EventLineUpLocalDataSource {
-  Future<Map<String, LineUpModel>> getLastLineUp();
-  Future<void> cacheLineUp(Map<String, LineUpEntity> lineUps);
+  Future<Map<String, dynamic>> getLastLineUp();
+  Future<void> cacheLineUp(Map<String, dynamic> lineUps);
 }
 
 class EventLineUpLocalDataSourceImpl implements EventLineUpLocalDataSource {
 
   @override
-  Future<void> cacheLineUp(Map<String, LineUpEntity> lineUps) async {
+  Future<void> cacheLineUp(Map<String, dynamic> lineUps) async {
     Box lineUpBox = Hive.box(DataSourceBoxName.lineUpName);
 
     if(!lineUpBox.isOpen){
       lineUpBox = await Hive.openBox(DataSourceBoxName.lineUpName);
     }
 
-    for (var lineUp in lineUps.values) {
-      lineUpBox.add(lineUp);
-    }
+    lineUpBox.add(lineUps);
   }
 
   @override
-  Future<Map<String, LineUpModel>> getLastLineUp() {
-    // TODO: implement getLastLineUp
-    throw UnimplementedError();
+  Future<Map<String, dynamic>> getLastLineUp() async {
+    Box lineUpBox = Hive.box(DataSourceBoxName.lineUpName);
+
+    if(!lineUpBox.isOpen){
+      lineUpBox = await Hive.openBox(DataSourceBoxName.lineUpName);
+    }
+
+    int lastBoxIndex = lineUpBox.length - 1;
+    Map<String, dynamic> lastLineUp = lineUpBox.getAt(lastBoxIndex);
+    return lastLineUp;
+
   }
 
 

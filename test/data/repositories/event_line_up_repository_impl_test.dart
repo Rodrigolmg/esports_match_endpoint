@@ -40,9 +40,10 @@ void main(){
     type: LineUpType.home
   );
 
-  Map<String, LineUpModel> lineUps = {
+  Map<String, dynamic> lineUps = {
     'away': lineUpAway,
-    'home': lineUpHome
+    'home': lineUpHome,
+    'confirmed': false
   };
 
   test('Should check if the device is online', () async {

@@ -13,11 +13,11 @@ class EventLineUpRepositoryImpl implements EventLineUpRepository {
   });
 
   @override
-  Future<Either<Failure, Map<String, LineUpEntity>>> getLineUp(int? eventId) async {
+  Future<Either<Failure, Map<String, dynamic>>> getLineUp(int? eventId) async {
 
     if(await networkInfo.isConnected){
       try {
-        Map<String, LineUpEntity> lineUps =
+        Map<String, dynamic> lineUps =
           await remoteDataSource.getLineUp(eventId);
 
         localDataSource.cacheLineUp(lineUps);
@@ -29,7 +29,7 @@ class EventLineUpRepositoryImpl implements EventLineUpRepository {
       }
     } else {
       try {
-        Map<String, LineUpEntity> lastLineUps =
+        Map<String, dynamic> lastLineUps =
         await localDataSource.getLastLineUp();
         return Right(lastLineUps);
       } on CacheException {
