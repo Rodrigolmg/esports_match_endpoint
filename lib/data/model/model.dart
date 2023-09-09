@@ -24,3 +24,6 @@ part 'lineup/player_model.dart';
 // h2h duel
 part 'h2h_duel/team_duel_model.dart';
 part 'h2h_duel/h2h_duel_model.dart';
+
+// event vote
+part 'event_vote/event_vote_model.dart';
