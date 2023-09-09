@@ -1,6 +1,8 @@
 library model;
 
 import 'package:esports_match_endpoint/domain/entities/entity.dart';
+import 'package:esports_match_endpoint/domain/entities/h2h_duel/h2h_duel_entity.dart';
+import 'package:esports_match_endpoint/domain/entities/h2h_duel/team_duel_entity.dart';
 
 // event
 part 'event/category_model.dart';
@@ -18,3 +20,7 @@ part 'event_streak/event_streak_model.dart';
 part 'lineup/line_up_model.dart';
 part 'lineup/event_color_model.dart';
 part 'lineup/player_model.dart';
+
+// h2h duel
+part 'h2h_duel/team_duel_model.dart';
+part 'h2h_duel/h2h_duel_model.dart';
