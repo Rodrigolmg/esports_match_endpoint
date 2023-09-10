@@ -27,3 +27,6 @@ part 'h2h_duel/h2h_duel_model.dart';
 
 // event vote
 part 'event_vote/event_vote_model.dart';
+
+// event game
+part 'event_game/game_score_model.dart';

@@ -35,3 +35,6 @@ part 'lineup/player_entity.dart';
 // event vote
 part 'event_vote/event_vote_entity.dart';
 // part 'event_vote/event_vote_entity.g.dart';
+
+// event game
+part 'event_game/game_score_entity.dart';
