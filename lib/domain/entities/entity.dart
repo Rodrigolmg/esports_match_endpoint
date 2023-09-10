@@ -31,3 +31,7 @@ part 'lineup/event_color_entity.dart';
 // part 'lineup/event_colors_entity.g.dart';
 part 'lineup/player_entity.dart';
 // part 'lineup/player_entity.g.dart';
+
+// event vote
+part 'event_vote/event_vote_entity.dart';
+// part 'event_vote/event_vote_entity.g.dart';

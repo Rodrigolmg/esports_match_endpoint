@@ -10,3 +10,4 @@ part 'live_match_repository.dart';
 part 'event_repository.dart';
 part 'event_line_up_repository.dart';
 part 'event_h2h_duel_repository.dart';
+part 'event_vote_repository.dart';

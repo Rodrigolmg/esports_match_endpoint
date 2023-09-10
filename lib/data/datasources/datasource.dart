@@ -17,6 +17,7 @@ part 'remote/live_match_datasource.dart';
 part 'remote/event_datasource.dart';
 part 'remote/event_line_up_datasource.dart';
 part 'remote/event_h2h_duel_datasource.dart';
+part 'remote/event_vote_datasource.dart';
 
 // local
 part 'local/event_streak_local_datasource.dart';
@@ -24,3 +25,4 @@ part 'local/live_match_local_datasource.dart';
 part 'local/event_local_datasource.dart';
 part 'local/event_line_up_local_datasource.dart';
 part 'local/event_h2h_duel_local_datasource.dart';
+part 'local/event_vote_local_datasource.dart';

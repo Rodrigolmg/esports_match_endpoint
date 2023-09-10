@@ -6,3 +6,4 @@ const String lineUpHomeJson = 'line_up_home.json';
 const String eventColorJson = 'event_color.json';
 const String h2hDuelJson = 'h2h_duel.json';
 const String teamDuelJson = 'team_duel.json';
+const String eventVoteJson = 'event_vote.json';
