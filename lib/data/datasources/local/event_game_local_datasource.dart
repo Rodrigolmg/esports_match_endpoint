@@ -7,15 +7,27 @@ abstract class EventGameLocalDataSource {
 
 class EventGameLocalDataSourceImpl implements EventGameLocalDataSource {
   @override
-  Future<void> cacheEventGames(List<EventGameEntity> games) {
-    // TODO: implement cacheEventGames
-    throw UnimplementedError();
+  Future<void> cacheEventGames(List<EventGameEntity> games) async {
+    Box eventGameBox = Hive.box(DataSourceBoxName.eventGameName);
+
+    if(!eventGameBox.isOpen){
+      eventGameBox = await Hive.openBox(DataSourceBoxName.eventGameName);
+    }
+
+    eventGameBox.add(games);
   }
 
   @override
-  Future<List<EventGameEntity>> getLastEventGames() {
-    // TODO: implement getLastEventGames
-    throw UnimplementedError();
+  Future<List<EventGameEntity>> getLastEventGames() async {
+    Box eventGameBox = Hive.box(DataSourceBoxName.eventStreakName);
+
+    if(!eventGameBox.isOpen){
+      eventGameBox = await Hive.openBox(DataSourceBoxName.eventStreakName);
+    }
+
+    int lastBoxIndex = eventGameBox.length - 1;
+    List<EventGameModel>? lastGames = eventGameBox.getAt(lastBoxIndex);
+    return Future.value(lastGames);
   }
 
 }
