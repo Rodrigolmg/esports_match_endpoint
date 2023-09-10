@@ -13,9 +13,24 @@ class EventGameDataSourceImpl implements EventGameDataSource {
   });
 
   @override
-  Future<List<EventGameEntity>> getEventGames(int? eventId) {
-    // TODO: implement getEventGames
-    throw UnimplementedError();
+  Future<List<EventGameEntity>> getEventGames(int? eventId) async {
+    Response response = await dio.getMethod(UrlPath.eventGamePath(eventId));
+    List<EventGameModel> games = [];
+
+    if(response.statusCode != null && response.statusCode == 200) {
+      if((response.data as Map<String, dynamic>).isEmpty){
+        throw ServerException(statusCode: 204);
+      }
+
+      for (var game in response.data as List<dynamic>) {
+        games.add(EventGameModel.fromJson(game));
+      }
+
+      return games;
+
+    } else {
+      throw ServerException(statusCode: response.statusCode);
+    }
   }
 
 
