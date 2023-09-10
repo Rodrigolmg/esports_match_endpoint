@@ -1,6 +1,6 @@
 part of usecase;
 
-class GetEventVote implements UseCase<EventVoteEntity, int?> {
+class GetEventVote implements UseCase<EventVoteEntity?, int?> {
 
   final EventVoteRepository repository;
 
@@ -9,7 +9,7 @@ class GetEventVote implements UseCase<EventVoteEntity, int?> {
   );
 
   @override
-  Future<Either<Failure, EventVoteEntity>> call([int? eventId]) {
+  Future<Either<Failure, EventVoteEntity?>> call([int? eventId]) {
     return repository.getEventVotes(eventId);
   }
 }
