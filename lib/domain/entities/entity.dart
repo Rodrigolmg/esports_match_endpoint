@@ -40,3 +40,4 @@ part 'event_vote/event_vote_entity.dart';
 part 'event_game/game_score_entity.dart';
 part 'event_game/game_map_entity.dart';
 part 'event_game/game_status_entity.dart';
+part 'event_game/event_game_entity.dart';

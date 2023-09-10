@@ -1,0 +1,27 @@
+{
+  "awayScore": {
+    "display": 11,
+    "period1": 8,
+    "period2": 3
+  },
+  "hasCompleteStatistics": true,
+  "homeScore": {
+    "display": 16,
+    "period1": 7,
+    "period2": 9
+  },
+  "homeTeamStartingSide": 4,
+  "id": 359440,
+  "length": 2951,
+  "map": {
+    "id": 20,
+    "name": "Mirage"
+  },
+  "startTimestamp": 1671401953,
+  "status": {
+    "code": 100,
+    "description": "Ended",
+    "type": "finished"
+  },
+  "winnerCode": 1
+}

@@ -10,3 +10,4 @@ const String eventVoteJson = 'event_vote.json';
 const String gameScoreJson = 'game_score.json';
 const String gameMapJson = 'game_map.json';
 const String gameStatusJson = 'game_status.json';
+const String eventGameJson = 'event_game.json';
