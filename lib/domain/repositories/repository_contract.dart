@@ -11,3 +11,4 @@ part 'event_repository.dart';
 part 'event_line_up_repository.dart';
 part 'event_h2h_duel_repository.dart';
 part 'event_vote_repository.dart';
+part 'event_game_repository.dart';

@@ -9,4 +9,5 @@ part 'get_event_streaks_usecase.dart';
 part 'get_live_match_usecase.dart';
 part 'get_event_usecase.dart';
 part 'get_line_ups_usecase.dart';
-part 'get_event_vote.dart';
+part 'get_event_vote_usecase.dart';
+part 'get_event_game_usecase.dart';
